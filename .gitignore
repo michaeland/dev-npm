@@ -9,9 +9,9 @@
 
 # Ignore node modules
 node_modules
+npm-debug.log
 
 
 # Ignore css & js output
-
 **/assets/css/dist/*
 **/assets/js/dist/*
