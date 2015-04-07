@@ -1,0 +1,95 @@
+
+// image replacement
+.ir {
+    display: block; 
+    border: 0; 
+    text-indent: -999em; 
+    overflow: hidden; 
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    text-align: left; 
+    direction: ltr; 
+    *line-height: 0;
+}
+
+.ir br {
+    display: none;
+}
+
+// new block formatting context – use on non-floated element
+.new-context {
+    overflow:hidden;
+    *zoom:1;
+}
+
+// hidden
+.hidden {
+    display: none !important; 
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus { 
+    clip: auto; 
+    height: auto; 
+    margin: 0; 
+    overflow: visible; 
+    position: static; 
+    width: auto;
+}
+
+// reset styling – useful for lists
+.reset { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    list-style: none; 
+    font-size: inherit; 
+    font: inherit; 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    quotes: none; 
+}
+
+.word-wrap {
+    -ms-word-break: break-all; 
+    word-break: break-all; // Non-standard for webkit
+    word-break: break-word; 
+    -webkit-hyphens: auto; 
+    -moz-hyphens: auto; 
+    hyphens: auto;
+}
+
+.hyphenate(@before: 2, @after:3, @lines:3) {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; // Non-standard for webkit
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    -webkit-hyphenate-before: @before;
+    -webkit-hyphenate-after: @after;
+    hyphenate-lines: @lines;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.antialias {
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}

@@ -1,0 +1,17 @@
+
+# Ignore hidden system files
+*~
+.DS_Store
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
+
+
+# Ignore node modules
+node_modules
+
+
+# Ignore css & js output
+
+**/assets/css/dist/*
+**/assets/js/dist/*

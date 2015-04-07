@@ -1,0 +1,156 @@
+
+/*
+
+	Usage
+
+	.grid-row 
+	as the container
+
+	.grid-row.no-gutter
+	 for a stepped out negative margin 
+
+	.span-*
+	for no-gutter columns
+
+	.col-*
+	for columns with a gutter
+
+	.*-mobile-*
+	for columns for mobile and up
+
+*/
+
+
+
+
+// config
+
+@columns: 12;
+@gutter-width: 20px;
+@column-width: 100%/@columns;
+
+
+// helpers
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+.clearfix, .clear {
+    *zoom:1; 
+    &:before, 
+    &:after { 
+        content:""; 
+        display:table; 
+    } 
+    &:after { 
+        clear:both;
+    }
+}
+
+
+// container styles
+
+.grid-row {
+	.clearfix;
+}
+
+
+.grid-row.no-gutter {
+	margin-left:-@gutter-width/2;
+	margin-right:-@gutter-width/2;
+}
+
+
+// negative margin for sub-containers
+
+[class*="col-"] .grid-row {
+	margin-left:-@gutter-width/2;
+	margin-right:-@gutter-width/2;
+}
+
+
+// span and col styles
+
+.grid-row [class*="col-"],
+.grid-row [class*="span-"] {
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+}
+
+
+
+// loop over columns
+
+.columns-loop(@i) when (@i > 0) {
+
+	// set col
+	.col-@{i},
+	.span-@{i} {
+		width: @column-width * @i;
+	}
+
+	.col-@{i}, {
+		padding-left: @gutter-width / 2;
+		padding-right: @gutter-width / 2;
+	}
+
+	.span-@{i}, {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	// next iteration
+	.columns-loop(@i - 1);
+}
+.columns-loop(0) {}
+.columns-loop(@columns);
+
+
+
+
+
+// loop over breakpoints
+
+.media-queries-loop(@j: length(@breakpoints)) when (@j > 0) {
+
+	@breakpoint: e(extract(@breakpoints, @j));
+
+	// loop over columns
+	.columns-loop-2(@i) when (@i > 0) {
+
+		.col-@{breakpoint}-@{i} {
+			@media (min-width: @@breakpoint) {
+				width:@column-width * @i;
+				padding-left: @gutter-width / 2;
+				padding-right: @gutter-width / 2;
+			}
+		}
+
+		.span-@{breakpoint}-@{i} {
+			@media (min-width: @@breakpoint) {
+				width:@column-width * @i;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		// next iteration
+		.columns-loop-2(@i - 1);
+	}
+	.columns-loop-2(0) {}
+	.columns-loop-2(@columns);
+
+
+	// next iteration
+	.media-queries-loop(@j - 1);
+}
+.media-queries-loop(0) {}
+.media-queries-loop;
