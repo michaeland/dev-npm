@@ -9,33 +9,23 @@
     "less-plugin-autoprefix": "^1.3.0",
     "less-plugin-clean-css": "^1.4.0",
     "minifyify": "^6.3.1",
-    "node-sass": "^2.0.0-beta",
-    "onchange": "0.0.2",
-    "uglify-js": "^2.4.16"
+    "onchange": "0.0.2"
   },
   "config": {
-    "less_input": "httpdocs/**/css/source/main.less",
-    "sass_input": "httpdocs/**/css/source/main.scss",
-    "js_input": "httpdocs/**/js/source/*.js",
-    "browserify_input": "httpdocs/**/js/source/main.js",
+    "less_input": "httpdocs/assets/css/source/main.less",
     "less_output": "httpdocs/assets/css/dist/site.css",
-    "sass_output_folder": "httpdocs/assets/css/dist",
-    "sass_output_filename": "site.css",
-    "js_output_folder": "httpdocs/assets/js/dist",
-    "js_output": "httpdocs/assets/js/dist/site.js",
-    "js_sourcemap": "httpdocs/assets/js/dist/site.js.map",
-    "js_sourcemap_uri": "site.js.map"
+    "js_input": "httpdocs/assets/js/source/*.js",
+    "browserify_input": "httpdocs/assets/js/source/main.js",
+    "browserify_output_folder": "httpdocs/assets/js/dist",
+    "browserify_output": "httpdocs/assets/js/dist/site.js",
+    "browserify_sourcemap": "httpdocs/assets/js/dist/site.js.map",
+    "browserify_sourcemap_uri": "site.js.map"
   },
   "scripts": {
-    "build:less": "lessc --source-map --strict-imports --clean-css --autoprefix $npm_package_config_less_input $npm_package_config_less_output",
+    "build:less": "lessc --source-map --strict-imports --clean-css --autoprefix='Firefox > 20' $npm_package_config_less_input $npm_package_config_less_output",
     "watch:less": "onchange 'httpdocs/**/*.less' -- npm run build:less",
-    "build:sass": "node-sass --source-map --output-style compressed --output $npm_package_config_sass_output_folder $npm_package_config_sass_input $npm_package_config_sass_output_filename",
-    "watch:sass": "onchange 'httpdocs/**/*.scss' -- npm run build:sass",
-    "autoprefix:sass": "autoprefixer -map --no-inline $npm_package_config_sass_output_folder/$npm_package_config_sass_output_filename",
-    "build:js": "uglifyjs $npm_package_config_js_input --source-map $npm_package_config_js_sourcemap --prefix relative --compress --output $npm_package_config_js_output",
-    "watch:js": "onchange 'httpdocs/**/source/*.js' -- npm run build:js",
-    "build:browserify": "mkdir -p $npm_package_config_js_output_folder && browserify $npm_package_config_browserify_input -d -p [minifyify --compressPath . --map $npm_package_config_js_sourcemap_uri --output $npm_package_config_js_sourcemap]  > $npm_package_config_js_output",
-    "watch:browserify": "onchange 'httpdocs/**/js/source/*.js' 'httpdocs/**/js/source/*/*.js'  -- npm run build:browserify",
+    "build:browserify": "mkdir -p $npm_package_config_browserify_output_folder && browserify $npm_package_config_browserify_input -d -p [minifyify --compressPath . --map $npm_package_config_browserify_sourcemap_uri --output $npm_package_config_browserify_sourcemap]  > $npm_package_config_browserify_output",
+    "watch:browserify": "onchange 'httpdocs/**/js/source/*.js' 'httpdocs/**/js/source/*/*.js' 'httpdocs/**/js/vendor/*.js'  -- npm run build:browserify",
     "watch": "npm run watch:less & npm run watch:browserify",
     "build": "npm run build:less & npm run build:browserify"
   }
