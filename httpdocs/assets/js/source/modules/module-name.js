@@ -2,14 +2,10 @@
 
 "use strict"
 
-var moduleName = function() {
+module.exports = function() {
 
 	return {
 
 	}
 
 }();
-
-
-// export module
-module.exports = moduleName

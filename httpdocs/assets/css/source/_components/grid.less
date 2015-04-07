@@ -1,4 +1,4 @@
-
+ 
 /*
 
 	Usage
@@ -31,14 +31,6 @@
 
 
 // helpers
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 
 .clearfix, .clear {
     *zoom:1; 
@@ -76,15 +68,19 @@ html {
 
 // span and col styles
 
-.grid-row [class*="col-"],
-.grid-row [class*="span-"] {
+[class*="col-"],
+[class*="span-"] {
 	min-height: 1px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	float: left;
 }
 
+
+.center-col {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 // loop over columns
@@ -107,6 +103,10 @@ html {
 		padding-right: 0;
 	}
 
+	.offset-@{i} {
+		margin-left:@column-width * @i;
+	}
+
 	// next iteration
 	.columns-loop(@i - 1);
 }
@@ -114,6 +114,9 @@ html {
 .columns-loop(@columns);
 
 
+.offset-0 {
+	margin-left:0;
+}
 
 
 
@@ -142,12 +145,26 @@ html {
 			}
 		}
 
+		// offset between 1-12
+		.offset-@{breakpoint}-@{i} {
+			@media (min-width: @@breakpoint) {
+				margin-left:@column-width * @i;
+			}
+		}
+
 		// next iteration
 		.columns-loop-2(@i - 1);
 	}
 	.columns-loop-2(0) {}
 	.columns-loop-2(@columns);
 
+
+	// offset 0
+	.offset-@{breakpoint}-0 {
+		@media (min-width: @@breakpoint) {
+			margin-left:0;
+		}
+	}
 
 	// next iteration
 	.media-queries-loop(@j - 1);

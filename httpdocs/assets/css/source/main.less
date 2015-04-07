@@ -1,7 +1,9 @@
 
 
-// breakpoints
-@breakpoints: 'mobile', 'mobile-large', 'tablet-portrait', 'tablet-landscape', 'desktop';
+// breakpoints – order from largest to smallest
+@breakpoints: 'desktop', 'tablet-landscape', 'tablet-portrait', 'mobile-large', 'mobile';
+
+// breakpoint sizes
 @mobile: 30em; //480px
 @mobile-large: 40.625em; // 650px
 @tablet-portrait: 48em; // 768px
@@ -14,7 +16,6 @@
 @import "_components/grid.less";
 @import "_components/font.less";
 @import "_components/helpers.less";
-@import "_components/elements.less";
 
 
 // global styles
