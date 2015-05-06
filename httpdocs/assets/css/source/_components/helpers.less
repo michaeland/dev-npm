@@ -79,3 +79,25 @@
     font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.vertical-center-container {
+    height: 100%;
+    white-space: nowrap;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        /* adjust for white space between pseudo element and next sibling */
+        margin-right: -.25em;
+        /* stretch line height */
+        height: 100%; 
+    }
+}
+
+.vertical-center-inner {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+}
