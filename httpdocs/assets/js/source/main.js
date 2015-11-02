@@ -2,4 +2,6 @@
 
 "use strict"
 
-var moduleName = require('./modules/module-name.js');
+import moduleName from './modules/moduleName.js';
+
+moduleName().init();
