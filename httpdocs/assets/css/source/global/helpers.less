@@ -1,6 +1,6 @@
 
 // image replacement
-.ir {
+.ir() {
     display: block; 
     border: 0; 
     text-indent: -999em; 
@@ -10,14 +10,14 @@
     text-align: left; 
     direction: ltr; 
     *line-height: 0;
-}
 
-.ir br {
-    display: none;
+    br {
+        display: none;
+    }
 }
 
 // new block formatting context – use on non-floated element
-.new-context {
+.new-context() {
     overflow:hidden;
     *zoom:1;
 }
@@ -47,34 +47,13 @@
     font: inherit; 
 }
 
-.word-wrap {
-    -ms-word-break: break-all; 
-    word-break: break-all; // Non-standard for webkit
-    word-break: break-word; 
-    -webkit-hyphens: auto; 
-    -moz-hyphens: auto; 
-    hyphens: auto;
-}
-
-.hyphenate(@before: 2, @after:3, @lines:3) {
-    -ms-word-break: break-all;
-    word-break: break-all;
-    word-break: break-word; // Non-standard for webkit
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-    -webkit-hyphenate-before: @before;
-    -webkit-hyphenate-after: @after;
-    hyphenate-lines: @lines;
-}
-
-.ellipsis {
+.ellipsis() {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.antialias {
+.antialias() {
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

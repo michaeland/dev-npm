@@ -1,0 +1,20 @@
+
+// link styles
+
+	@link: blue;
+
+	a {
+		color:@link;
+	}
+
+	a:visited {
+		color: darken(@link,10%);
+	}
+
+	a:hover {
+		color: lighten(@link,20%);
+	}
+
+	a:active {
+		color: lighten(@link,10%);
+	}
