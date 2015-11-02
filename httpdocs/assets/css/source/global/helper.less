@@ -16,6 +16,18 @@
     }
 }
 
+.clearfix, .clear {
+    *zoom:1; 
+    &:before, 
+    &:after { 
+        content:""; 
+        display:table; 
+    } 
+    &:after { 
+        clear:both;
+    }
+}
+
 // new block formatting context – use on non-floated element
 .new-context() {
     overflow:hidden;
