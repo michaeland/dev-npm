@@ -1,0 +1,262 @@
+/*
+    Usage
+    
+    .page-{margin|padding}-{top|right|bottom|left}
+    .page-{margin|padding}-{top|right|bottom|left}--small
+    .page-{margin|padding}-{vertical|horizontal}
+    .page-{margin|padding}-{vertical|horizontal}--small
+    .page-inset
+*/
+
+
+// default settings 
+
+@page-maxWidth: 1400px;
+@page-marginHorizontal: 20px;
+@page-marginHorizontal-tablet: 45px;
+@page-marginHorizontal-desktop: 68px;
+@page-marginVertical: 45px;
+@page-marginVertical-tablet: 60px;
+@page-marginVertical-desktop: 75px;
+
+@page-breakpoint-tablet: @mobile-large;
+@page-breakpoint-desktop: @tablet-portrait;
+
+
+// page margins
+
+.page-max-width {
+    max-width:@page-maxWidth;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+// mobile
+
+.page-margin-top {
+    margin-top: @page-marginVertical;
+}
+
+.page-margin-right {
+    margin-right: @page-marginHorizontal;
+}
+
+.page-margin-bottom {
+    margin-bottom: @page-marginVertical;
+}
+
+.page-margin-left {
+    margin-left: @page-marginHorizontal;
+}
+
+.page-padding-top {
+    padding-top: @page-marginVertical;
+}
+
+.page-padding-right {
+    padding-right: @page-marginHorizontal;
+}
+
+.page-padding-bottom {
+    padding-bottom: @page-marginVertical;
+}
+
+.page-padding-left {
+    padding-left: @page-marginHorizontal;
+}
+
+.page-padding-top--small {
+    padding-top: @page-marginVertical/2;
+}
+
+.page-padding-right--small {
+    padding-right: @page-marginHorizontal/2;
+}
+
+.page-padding-bottom--small {
+    padding-bottom: @page-marginVertical/2;
+}
+
+.page-padding-left--small {
+    padding-left: @page-marginHorizontal/2;
+}
+
+
+// tablet
+
+@media(min-width: @page-breakpoint-tablet) {
+
+    .page-margin-top {
+        margin-top: @page-marginVertical-tablet;
+    }
+
+    .page-margin-right {
+        margin-right: @page-marginHorizontal-tablet;
+    }
+
+    .page-margin-bottom {
+        margin-bottom: @page-marginVertical-tablet;
+    }
+
+    .page-margin-left {
+        margin-left: @page-marginHorizontal-tablet;
+    }
+
+    .page-padding-top {
+        padding-top: @page-marginVertical-tablet;
+    }
+
+    .page-padding-right {
+        padding-right: @page-marginHorizontal-tablet;
+    }
+
+    .page-padding-bottom {
+        padding-bottom: @page-marginVertical-tablet;
+    }
+
+    .page-padding-left {
+        padding-left: @page-marginHorizontal-tablet;
+    }
+
+    .page-padding-top--small {
+        padding-top: @page-marginVertical-tablet/2;
+    }
+
+    .page-padding-right--small {
+        padding-right: @page-marginHorizontal-tablet/2;
+    }
+
+    .page-padding-bottom--small {
+        padding-bottom: @page-marginVertical-tablet/2;
+    }
+
+    .page-padding-left--small {
+        padding-left: @page-marginHorizontal-tablet/2;
+    }
+}
+
+
+// desktop
+
+@media(min-width: @page-breakpoint-desktop) {
+
+    .page-margin-top {
+        margin-top: @page-marginVertical-desktop;
+    }
+
+    .page-margin-right {
+        margin-right: @page-marginHorizontal-desktop;
+    }
+
+    .page-margin-bottom {
+        margin-bottom: @page-marginVertical-desktop;
+    }
+
+    .page-margin-left {
+        margin-left: @page-marginHorizontal-desktop;
+    }
+
+    .page-padding-top {
+        padding-top: @page-marginVertical-desktop;
+    }
+
+    .page-padding-right {
+        padding-right: @page-marginHorizontal-desktop;
+    }
+
+    .page-padding-bottom {
+        padding-bottom: @page-marginVertical-desktop;
+    }
+
+    .page-padding-left {
+        padding-left: @page-marginHorizontal-desktop;
+    }
+
+    .page-padding-top--small {
+        padding-top: @page-marginVertical-desktop/2;
+    }
+
+    .page-padding-right--small {
+        padding-right: @page-marginHorizontal-desktop/2;
+    }
+
+    .page-padding-bottom--small {
+        padding-bottom: @page-marginVertical-desktop/2;
+    }
+
+    .page-padding-left--small {
+        padding-left: @page-marginHorizontal-desktop/2;
+    }
+}
+
+
+// extend to horizontal/vertical helper classes
+
+.page-margin-horizontal {
+    &:extend(.page-margin-left);
+    &:extend(.page-margin-right);
+}
+
+.page-margin-vertical {
+    &:extend(.page-margin-top);
+    &:extend(.page-margin-bottom);
+}
+
+.page-margin {
+    &:extend(.page-margin-left);
+    &:extend(.page-margin-right);
+    &:extend(.page-margin-top);
+    &:extend(.page-margin-bottom);
+}
+
+.page-padding-horizontal {
+    &:extend(.page-padding-left);
+    &:extend(.page-padding-right);
+}
+
+.page-padding-vertical {
+    &:extend(.page-padding-top);
+    &:extend(.page-padding-bottom);
+}
+
+.page-padding {
+    &:extend(.page-padding-left);
+    &:extend(.page-padding-right);
+    &:extend(.page-padding-top);
+    &:extend(.page-padding-bottom);
+}
+
+.page-padding-horizontal--small {
+    &:extend(.page-padding-left--small);
+    &:extend(.page-padding-right--small);
+}
+
+.page-padding-vertical--small {
+    &:extend(.page-padding-top--small);
+    &:extend(.page-padding-bottom--small);
+}
+
+.page-padding--small {
+    &:extend(.page-padding-left--small);
+    &:extend(.page-padding-right--small);
+    &:extend(.page-padding-top--small);
+    &:extend(.page-padding-bottom--small);
+}
+
+
+// inset margins
+
+@media(min-width:@desktop) {
+    .page-inset {
+        padding-left:@page-marginHorizontal-desktop;
+        padding-right:@page-marginHorizontal-desktop;
+    }   
+}
+
+@media(min-width:@desktop-large) {
+    .page-inset {
+        padding-left:@page-marginHorizontal-desktop * 3;
+        padding-right:@page-marginHorizontal-desktop * 3;
+    }   
+}

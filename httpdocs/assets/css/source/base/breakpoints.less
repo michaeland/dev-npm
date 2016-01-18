@@ -1,0 +1,31 @@
+/*
+	# default breakpoints:
+	· These breakpoints use the values of the variables below `@mobile` etc.
+
+	· The names are used in the `.col-desktop-12` style classes
+
+	· order @breakpoints from largest to smallest.
+*/
+
+@breakpoints: 'desktop-large', 'desktop', 'tablet-landscape', 'tablet-portrait', 'mobile-large', 'mobile';
+@mobile: 30em; //480px
+@mobile-large: 40.625em; // 650px
+@tablet-portrait: 48em; // 768px
+@tablet-landscape: 64em; // 1024px
+@desktop: 75em; // 1200px
+@desktop-large: 90em; // 1440px
+
+
+/*
+	# breakpoint-max sizes:
+	· used to stop the 1px overlay when doing `@media (max-width:@breakpoint) {}`
+	· when using max-width breakpoints, use the `@breakpoint-max` version.
+*/
+
+@breakpoint-round: 0.01em;
+@mobile-max: (@mobile - @breakpoint-round);
+@mobile-large-max: (@mobile-large - @breakpoint-round);
+@tablet-portrait-max: (@tablet-portrait - @breakpoint-round);
+@tablet-landscape-max: (@tablet-landscape - @breakpoint-round);
+@desktop-max: (@desktop - @breakpoint-round);
+@desktop-large-max: (@desktop-large - @breakpoint-round);

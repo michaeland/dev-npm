@@ -1,0 +1,41 @@
+
+// for
+.for(@number, @rules, @start: 1) {
+    & {
+        .l(@i) when (@i <= @number) {
+
+            @rules();
+            // go to next iteration
+            .l(@i: @i + 1);
+        }
+        // call loop
+        .l(@start);
+    }
+}
+
+
+
+// for each breakpoint
+.breakpoints(@rules) {
+    .for(length(@breakpoints), {
+        @breakpoint: e(extract(@breakpoints, @i));
+        @rules();
+    });
+}
+
+
+
+// for each breakpoint, for each @number
+.forBreakpointEach(@number, @rules, @start: 1) {
+    & {
+        .forBreakpoint(@j: 0) when (@j <= length(@breakpoints)) {
+
+            @breakpoint: e(extract(@breakpoints, @j));
+
+            .for(@number, @rules, @start);
+            // next iteration
+            .forBreakpoint(@j: @j + 1);
+        }
+        .forBreakpoint(@j:@start);
+    }
+}

@@ -1,0 +1,87 @@
+	
+// settings
+
+	@typography-titleLetterspacing: 0em;
+
+// global
+
+	h1, h2, h3, .heading-1, .heading-2, .heading-3 {
+		letter-spacing:@typography-titleLetterspacing;
+	}
+
+	p {
+		font-size:1.125rem;
+	}
+
+
+// headings
+
+	// weights
+
+	.heading-1,
+	.heading-2,
+	.heading-3 {
+		font-weight:normal;
+	}
+
+	// sizes (default mobile + desktop)
+
+	.heading-1 {
+		font-size:2rem;
+
+		@media(min-width:@mobile-large) {
+		}
+
+		@media(min-width:@tablet-portrait) {
+		}
+	}
+
+	.heading-2 {
+		font-size:1.5rem;
+
+		@media(min-width:@mobile-large) {
+		}
+
+		@media(min-width:@tablet-portrait) {
+		}
+	}
+
+	.heading-3 {
+		font-size:1.125rem;
+
+		@media(min-width:@mobile-large) {
+		}
+
+		@media(min-width:@tablet-portrait) {
+		}
+	}
+
+	.intro-text, .intro-text p {
+
+		@media(min-width:@mobile-large) {
+		}
+
+		@media(min-width:@tablet-portrait) {
+		}
+	}
+
+
+
+// user-editable content sections
+
+	.text-content {
+
+		// h1, h2, h3, h4, h5 styles
+		h1, h2, h3 {
+
+		}
+
+		// normal text styles
+		p, li, dd, dt, blockquote {
+		}
+
+		// list styles
+		li {
+			margin-bottom:1em;
+		}
+	}

@@ -1,11 +1,8 @@
 // filename: moduleName.js
 
-export default function moduleName() {
+function init() {
+}
 
-	function init() {
-	}
-
-	return {
-		init : init
-	};
+export default {
+	init
 }

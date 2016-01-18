@@ -1,0 +1,75 @@
+
+// font rendering
+
+html {
+	font-size-adjust: auto;
+	text-rendering: optimizeLegibility;
+	.antialias;
+}
+
+
+// reset all h1–h6 
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+
+	// reset all h1–6 sizes, we'll apply these with classes, below
+	font-size:inherit;
+}
+
+
+// blockquote
+
+blockquote, blockquote p {
+  hanging-punctuation: first;
+}
+
+blockquote {
+	margin:1em 0 1em 0;
+
+	&:before {
+		content: '“';
+		margin-bottom:-0.25em;
+	}
+
+	&:after {
+		content: '”';
+		margin-top:0.25em;
+	}
+
+	&:before, &:after {
+		display:block;
+		font-size:4em;
+		text-align: center;
+		font-family: arial;
+	}
+}
+
+.blockquote-left() {
+	&:before, &:after {
+		text-align:left;
+	}
+}
+
+.blockquote-right() {
+	&:before, &:after {
+		text-align:right;
+	}
+}
+
+
+// horizontal rule
+
+hr {
+	border:none;
+	padding:0;
+	margin:1em 0;
+
+	@media (min-width:@mobile-large) {
+		margin:3em 0;
+	}
+}
+
+hr.line {
+	border-top:1px solid #ccc;
+}

@@ -1,21 +1,29 @@
-
-// variables
-@import "variables.less";
-
-// global
-@import "global/normalize.less";
-@import "global/font.less";
-@import "global/helper.less";
+// core
+@import "base/base";
 
 
-// components
-@import "components/grid.less";
-@import "components/grid-inline-block.less";
-@import "components/input.less";
-@import "components/link.less";
-@import "components/table.less";
-@import "components/text.less";
+// font icon
+// @import "extra/font-icon";
+
+
+// vendor
+// @import "./../vendor/____";
+
+
+// config
+@import "config/breakpoints";
+@import "config/font-face";
+@import "config/grid";
+@import "config/page";
 
 
 // modules
-// @import "modules/module-name.less";
+@import "modules/links";
+@import "modules/typography";
+@import "modules/button";
+
+// variables
+@import "variables";
+
+// overrides
+@import "overrides";
