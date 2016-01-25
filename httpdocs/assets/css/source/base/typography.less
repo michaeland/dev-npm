@@ -1,10 +1,17 @@
 
 // font rendering
 
+@font-main: 'sans-serif';
+
 html {
 	font-size-adjust: auto;
 	text-rendering: optimizeLegibility;
 	.antialias;
+}
+
+// set all to main font
+h1, h2, h3, h4, h5, h6, blockquote, p, table, tr, th, td {
+	font-family: @font-main;
 }
 
 
@@ -12,7 +19,6 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight:normal;
-
 	// reset all h1–6 sizes, we'll apply these with classes, below
 	font-size:inherit;
 }
