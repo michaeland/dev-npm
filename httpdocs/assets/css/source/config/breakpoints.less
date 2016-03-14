@@ -6,17 +6,17 @@
 	· The names are used in the `.col-desktop-12` style classes, so 
 	  use lowercase and hyphens for names.
 
-	· order names from largest number to smallest.
+	· order @breakpoints from smallest to largest.
 */
 
-@breakpoints: 'desktop-large', 'desktop', 'tablet-landscape', 'tablet-portrait', 'mobile-large', 'mobile';
+@breakpoints: 'mobile', 'mobile-large', 'tablet-portrait', 'tablet-landscape', 'desktop', 'desktop-large';
+
 @mobile: 30em; //480px
 @mobile-large: 40.625em; // 650px
 @tablet-portrait: 48em; // 768px
 @tablet-landscape: 64em; // 1024px
 @desktop: 75em; // 1200px
 @desktop-large: 90em; // 1440px
-
 
 /*
 	# breakpoint-max sizes:

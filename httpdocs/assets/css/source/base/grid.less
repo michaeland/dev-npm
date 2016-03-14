@@ -13,18 +13,18 @@
 // default settings
 
 @grid-columns: 12;
-@grid-gutterWidth: 20px;
-@grid-gutterWidth-desktop: 28px;
-@grid-gutterWidth-breakpoint: @tablet-portrait;
-@grid-columnWidth: 100%/@grid-columns;
+@grid-gutterwidth: 20px;
+@grid-gutterwidth-desktop: 28px;
+@grid-gutterwidth-breakpoint: @tablet-portrait;
+@grid-columnwidth: 100%/@grid-columns;
 
 
 // container styles
 
 .grid {
 	.clearfix;
-	margin-left:-@grid-gutterWidth/2;
-	margin-right:-@grid-gutterWidth/2;
+	margin-left:-@grid-gutterwidth/2;
+	margin-right:-@grid-gutterwidth/2;
 }
 
 .grid--no-gutter {
@@ -35,8 +35,8 @@
 .grid--inline {
 	font-family: monospace;
 	letter-spacing: -.65em;
-	margin-left: -@grid-gutterWidth/2;
-	margin-right: -@grid-gutterWidth/2;
+	margin-left: -@grid-gutterwidth/2;
+	margin-right: -@grid-gutterwidth/2;
 	text-align: left;
 	display: block;
 }
@@ -44,8 +44,8 @@
 // negative margin for sub-containers
 
 .grid .grid {
-	margin-left:-@grid-gutterWidth/2;
-	margin-right:-@grid-gutterWidth/2;
+	margin-left:-@grid-gutterwidth/2;
+	margin-right:-@grid-gutterwidth/2;
 }
 
 // column styles
@@ -53,8 +53,8 @@
 [class*="col-"] {
 	min-height: 1px;
 	float: left;
-	padding-left: @grid-gutterWidth/2;
-	padding-right: @grid-gutterWidth/2;
+	padding-left: @grid-gutterwidth/2;
+	padding-right: @grid-gutterwidth/2;
 }
 
 .grid--inline [class*="col-"] {
@@ -81,25 +81,25 @@
 }
 
 .col--spacing-vertical {
-	margin-bottom: @grid-gutterWidth;
+	margin-bottom: @grid-gutterwidth;
 
-	@media(min-width:@grid-gutterWidth-breakpoint) {
-		margin-bottom: @grid-gutterWidth-desktop;
+	@media(min-width:@grid-gutterwidth-breakpoint) {
+		margin-bottom: @grid-gutterwidth-desktop;
 	}
 }
 
 // desktop sizes
 
-@media(min-width: @grid-gutterWidth-breakpoint) {
+@media(min-width: @grid-gutterwidth-breakpoint) {
 
 	.grid {
-		margin-left:-@grid-gutterWidth-desktop/2;
-		margin-right:-@grid-gutterWidth-desktop/2;
+		margin-left:-@grid-gutterwidth-desktop/2;
+		margin-right:-@grid-gutterwidth-desktop/2;
 	}
 
 	.grid .grid {
-		margin-left:-@grid-gutterWidth-desktop/2;
-		margin-right:-@grid-gutterWidth-desktop/2;
+		margin-left:-@grid-gutterwidth-desktop/2;
+		margin-right:-@grid-gutterwidth-desktop/2;
 	}
 
 	.grid--no-gutter {
@@ -108,23 +108,21 @@
 	}
 
 	[class*="col-"] {
-		padding-left: @grid-gutterWidth-desktop/2;
-		padding-right: @grid-gutterWidth-desktop/2;
+		padding-left: @grid-gutterwidth-desktop/2;
+		padding-right: @grid-gutterwidth-desktop/2;
 	}
-	
 }
 
 
 .for(@grid-columns, {
 
 	.col-@{i} {
-		width: @grid-columnWidth * @i;
+		width: @grid-columnwidth * @i;
 	}
 
 	.offset-@{i} {
-		margin-left:@grid-columnWidth * @i;
+		margin-left:@grid-columnwidth * @i;
 	}
-
 });
 
 
@@ -140,22 +138,17 @@
 	width: 60%;
 }
 
-.col-quarter {
-	width: 25%;
-}
-
-
 
 .forBreakpointEach(@grid-columns, {
 
 	@media (min-width:@@breakpoint) {
 
 		.col-@{breakpoint}-@{i} {
-			width:@grid-columnWidth * @i;
+			width:@grid-columnwidth * @i;
 		}
 		
 		.offset-@{breakpoint}-@{i} {
-			margin-left:@grid-columnWidth * @i;
+			margin-left:@grid-columnwidth * @i;
 		}
 	}
 });
@@ -174,10 +167,6 @@
 
 		.col-@{breakpoint}-three-fifths {
 			width: 60%;
-		}
-
-		.col-@{breakpoint}-quarter {
-			width: 25%;
 		}
 	}
 });
