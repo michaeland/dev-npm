@@ -98,6 +98,26 @@
     }
 }
 
+.float-left {
+    float:left;
+}
+
+.float-right {
+    float:right;
+}
+
+.breakpoints({
+    @media(min-width:@@breakpoint) { 
+
+        .float-@{breakpoint}-left {
+            float:left;
+        }
+        .float-@{breakpoint}-right {
+            float:right;
+        }
+    }
+});
+
 
 
 // position
