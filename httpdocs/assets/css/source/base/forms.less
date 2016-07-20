@@ -1,26 +1,45 @@
 // forms
 
-input[type=search],
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=tel],
-input[type=number],
-input[type=password],
+[type=search],
+[type=text],
+[type=submit],
+[type=email],
+[type=url],
+[type=tel],
+[type=number],
+[type=password],
 textarea {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
+	background: transparent;
+}
+
+
+[role="button"],
+[type="submit"],
+[type="reset"],
+[type="button"],
+button {
+    box-sizing: content-box;
+}
+
+[type="submit"],
+[type="reset"],
+[type="button"],
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button;
+    user-select: none;
     background: transparent;
 }
 
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button {
-    -webkit-appearance: none;
-}
-
-input::-moz-focus-inner,
-button::-moz-focus-inner {
+::-moz-focus-inner,
+::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
