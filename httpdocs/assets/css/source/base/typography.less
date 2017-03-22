@@ -1,27 +1,9 @@
 
 // font rendering
 
-@font-main: 'sans-serif';
-@font-weight-main: normal;
-
 html {
 	font-size-adjust: auto;
 	text-rendering: optimizeLegibility;
-}
-
-// set all to main font
-h1, h2, h3, h4, h5, h6, blockquote, p, table, tr, th, td, li {
-	font-family: @font-main;
-	font-weight: @font-weight-main;
-}
-
-
-// reset all h1–h6 
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight:normal;
-	// reset all h1–6 sizes, we'll apply these with classes later
-	font-size:inherit;
 }
 
 
@@ -33,13 +15,4 @@ blockquote, blockquote p {
 
 blockquote {
 	margin:1em 0 1em 0;
-}
-
-
-// horizontal rule
-
-hr {
-	border:none;
-	padding:0;
-	margin:1em 0;
 }
