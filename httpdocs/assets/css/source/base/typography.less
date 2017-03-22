@@ -7,7 +7,6 @@
 html {
 	font-size-adjust: auto;
 	text-rendering: optimizeLegibility;
-	.antialias;
 }
 
 // set all to main font
@@ -21,7 +20,7 @@ h1, h2, h3, h4, h5, h6, blockquote, p, table, tr, th, td, li {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight:normal;
-	// reset all h1–6 sizes, we'll apply these with classes, below
+	// reset all h1–6 sizes, we'll apply these with classes later
 	font-size:inherit;
 }
 
@@ -43,12 +42,4 @@ hr {
 	border:none;
 	padding:0;
 	margin:1em 0;
-
-	@media (min-width:@mobile-large) {
-		margin:3em 0;
-	}
-}
-
-hr.line {
-	border-top:1px solid #ccc;
 }

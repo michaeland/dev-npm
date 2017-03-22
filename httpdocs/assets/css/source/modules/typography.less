@@ -1,30 +1,18 @@
-	
-// settings
-
-	@typography-title-letterspacing: 0em;
-
-// global
-
-	h1, h2, h3, .heading-1, .heading-2, .heading-3 {
-		letter-spacing:@typography-title-letterspacing;
-	}
-
-	p {
-		font-size:1.125rem;
-	}
 
 
-// headings
+// reset
+//  
+// reset all headings to basic text styles. 
+// Ue semantic <h1>, <h2> elements where appropriate based on content flow.
+// Use the .heading-1, .heading-2, etc. classes to style headings visually.
 
-	// weights
-
-	.heading-1,
-	.heading-2,
-	.heading-3 {
+	h1, h2, h3, h4, h5, h6 {
 		font-weight:normal;
+		font-size:inherit;
 	}
 
-	// sizes (default mobile + desktop)
+
+// custom headings
 
 	.heading-1 {
 		font-size:2rem;
@@ -56,23 +44,16 @@
 		}
 	}
 
-	.intro-text, .intro-text p {
-
-		@media(min-width:@mobile-large) {
-		}
-
-		@media(min-width:@tablet-portrait) {
-		}
-	}
-
-
 
 // user-editable content sections
+//
+// For any CMS-editable body text areas, apply the '.cms-content' class
+// and style the basic 'h1', 'h2' elements specifically.
 
-	.text-content {
+	.cms-content {
 
-		// h1, h2, h3, h4, h5 styles
-		h1, h2, h3 {
+		// basic heading styles
+		h1, h2, h3, h4, h5, h6 {
 
 		}
 

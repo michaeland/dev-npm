@@ -1,23 +1,13 @@
 // default settings
 
+@button-size-small: 0.8rem;
 @button-size-normal: 1rem;
 @button-size-large: 1.5rem;
-@button-size-small: 0.8rem;
-
-@button-primary-colour: blue;
-@button-secondary-colour: black;
-
-@button-weight-bold: 700;
-@button-weight-light: 200;
-@button-weight-extralight: 100;
-
-@button-box-padding: 0.4em 0.6em;
-@button-outline-width: 1px;
 
 
 // reset
 
-button.button {
+.button {
 	outline:0;
 }
 
@@ -30,18 +20,8 @@ button.button {
 	display:inline-block;
 }
 
-.button--block {
-	width:10em;
-	max-width:100%;
-}
 
-.button--block--wide {
-	width:15em;
-	max-width:100%;
-}
-
-
-// sizes and weights
+// sizes
 
 .button--small {
 	font-size:@button-size-small;
@@ -51,93 +31,20 @@ button.button {
 	font-size:@button-size-large;
 }
 
+
+// button types
+
+.button--primary {}
+
+.button--secondary {}
+
+
+// helpers
+
 .button--bold {
-	font-weight:@button-weight-bold;
-}
-
-.button--light {
-	font-weight:@button-weight-light;
-}
-
-.button--extralight {
-	font-weight:@button-weight-extralight;
+	font-weight:bold;
 }
 
 .button--caps {
 	text-transform: uppercase;
-}
-
-
-// colour variants
-
-.button--primary {
-	color:@button-primary-colour;
-	border-color:@button-primary-colour;
-
-	&:hover {
-		color:lighten(@button-primary-colour, 10%);
-	}
-}
-
-.button--secondary {
-	color:@button-secondary-colour;
-	border-color:@button-secondary-colour;
-
-	&:hover {
-		color:lighten(@button-secondary-colour, 10%);
-	}
-}
-
-.button--white {
-	color:white;
-	border-color:white;
-
-	&:hover {
-		color:lighten(@button-primary-colour, 80%);
-	}
-}
-
-
-// button variants with solid backgrounds
-
-.button--solid {
-	background-color:@button-primary-colour;
-	padding:@button-box-padding;
-
-	text-align: center;
-	color:white;
-
-	&:hover {
-		color:lighten(@button-primary-colour,40%);
-	}
-}
-
-.button--solid.button--secondary {
-	background-color:@button-secondary-colour;
-	color:white;
-
-	&:hover {
-		color:lighten(@button-secondary-colour,40%);
-	}
-}
-
-
-// faded button
-
-.button--faded {
-	opacity:0.7;
-
-	&:hover, &:active {
-		opacity:1;
-	} 
-}
-
-
-// outline button variants
-
-.button--outline {
-	border-style:solid;
-	border-width:@button-outline-width;
-	padding:@button-box-padding;
-	text-align:center;
 }

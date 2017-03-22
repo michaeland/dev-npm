@@ -126,19 +126,6 @@
 });
 
 
-.col-fifth {
-	width: 20%;
-}
-
-.col-two-fifths {
-	width: 40%;
-}
-
-.col-three-fifths {
-	width: 60%;
-}
-
-
 .forBreakpointEach(@grid-columns, {
 
 	@media (min-width:@@breakpoint) {
@@ -149,24 +136,6 @@
 		
 		.offset-@{breakpoint}-@{i} {
 			margin-left:@grid-columnwidth * @i;
-		}
-	}
-});
-
-
-.breakpoints({
-
-	@media (min-width: @@breakpoint) {
-		.col-@{breakpoint}-fifth {
-			width: 20%;
-		}
-
-		.col-@{breakpoint}-two-fifths {
-			width: 40%;
-		}
-
-		.col-@{breakpoint}-three-fifths {
-			width: 60%;
 		}
 	}
 });
