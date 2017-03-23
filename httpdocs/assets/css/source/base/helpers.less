@@ -68,7 +68,7 @@
 
 // image replacement
 
-.ir {
+.image-replace() {
     display: block; 
     border: 0; 
     text-indent: -999em; 
@@ -82,6 +82,10 @@
     br {
         display: none;
     }
+}
+
+.ir() {
+    .image-replace();
 }
 
 
@@ -193,8 +197,13 @@
 }
 
 .reset-list() {
+
     .reset();
-    list-style:none;
+
+    li { 
+        .reset();
+        list-style:none; 
+    }
 }
 
 .reset-select() {
