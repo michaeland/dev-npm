@@ -5,9 +5,9 @@ echo "entering $DIR"
 cd $DIR
 
 echo "getting dependencies …"
-npm install
+yarn install
 
 echo "building …"
-npm run build
+yarn build
 
 echo "finished build"
