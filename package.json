@@ -14,7 +14,6 @@
     "less-plugin-clean-css": "^1.5.1",
     "minifyify": "^7.3.4",
     "onchange": "^3.2.0",
-    "postcss-cli": "^3.0.0",
     "watchify": "^3.7.0"
   },
   "config": {
