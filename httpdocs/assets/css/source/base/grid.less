@@ -1,12 +1,12 @@
 /*
 	Usage
 	
-	.grid 			       - container for floated columns
-	.grid--inline 	       - container for inline block columns
+	.grid                  - container for floated columns
+	.grid--inline          - container for inline block columns
 	.grid--no-gutter       - remove gutter from grid
-	.col-x 			       - for columns at width x
+	.col-x                 - for columns at width x
 	.col-{breakpoint}-x    - mobile-first column widths
-	.col--right       	   - float column right
+	.col--right            - float column right
 	.col--spacing-vertical - add equivalent vertical spacing to columns
 */
 
@@ -32,6 +32,60 @@
 	margin-right:0;
 }
 
+.grid--flex {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	&:before, &:after {
+		display:block;
+	}
+}
+
+.grid--flex-justify-start {
+	justify-content: flex-start;
+}
+
+.grid--flex-justify-end {
+	justify-content: flex-end;
+}
+
+.grid--flex-justify-center {
+	justify-content: center;
+}
+
+.grid--flex-justify-space-between {
+	justify-content: space-between;
+}
+
+.grid--flex-justify-space-around {
+	justify-content: space-around;
+}
+
+.grid--flex-justify-space-evenly {
+	justify-content: space-evenly;
+}
+
+.grid--flex-align-start {
+	align-items: flex-start;
+}
+
+.grid--flex-align-end {
+	align-items: flex-end;
+}
+
+.grid--flex-align-center {
+	align-items: center;
+}
+
+.grid--flex-align-baseline {
+	align-items: baseline;
+}
+
+.grid--flex-align-stretch {
+	align-items: stretch;
+}
+
 .grid--inline {
 	font-family: monospace;
 	letter-spacing: -.65em;
@@ -55,6 +109,12 @@
 	float: left;
 	padding-left: @grid-gutterwidth/2;
 	padding-right: @grid-gutterwidth/2;
+}
+
+.grid--flex [class*="col-"] {
+	@supports(display:flex) {
+		float:none;
+	}
 }
 
 .grid--inline [class*="col-"] {
