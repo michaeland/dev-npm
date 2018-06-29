@@ -1,17 +1,8 @@
 /*
-	# breakpoints:
-	· Set up your breakpoint names here for use in the grid system,
-	  These use the values of the variables below `@mobile` etc.
-
-	· The names are used in the `.col-desktop-12` style classes, so 
-	  use lowercase and hyphens for names.
-
-	· order @breakpoints from smallest to largest.
+	breakpoints
 */
 
-@breakpoints: 'mobile', 'mobile-large', 'tablet-portrait', 'tablet-landscape', 'desktop', 'desktop-large';
-
-@mobile: 30em; //480px
+@mobile: 30em; // 480px
 @mobile-large: 40.625em; // 650px
 @tablet-portrait: 48em; // 768px
 @tablet-landscape: 64em; // 1024px
@@ -19,7 +10,7 @@
 @desktop-large: 90em; // 1440px
 
 /*
-	# breakpoint-max sizes:
+	breakpoint-max sizes
 	· used to stop the 1px overlay when doing `@media (max-width:@breakpoint) {}`
 	· when using max-width breakpoints, use the `@breakpoint-max` version.
 */
@@ -31,3 +22,10 @@
 @tablet-landscape-max: (@tablet-landscape - @breakpoint-round);
 @desktop-max: (@desktop - @breakpoint-round);
 @desktop-large-max: (@desktop-large - @breakpoint-round);
+
+/*
+	list out all breakpoints that breakpoint mixins should loops over (e.g. the grid system)
+	· order @breakpoints from smallest to largest.
+*/
+
+@breakpoints: 'mobile', 'mobile-large', 'tablet-portrait', 'tablet-landscape', 'desktop', 'desktop-large';
