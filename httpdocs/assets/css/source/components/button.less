@@ -1,11 +1,4 @@
 
-// default settings
-
-@button-size: 1rem;
-@button-size-small: 0.8rem;
-@button-size-large: 1.5rem;
-
-
 // reset
 
 .button {
@@ -13,23 +6,11 @@
 }
 
 
-// button types
+// basic button style
 
 .button {
-	font-size:@button-size;
 	text-decoration:none;
 	display:inline-block;
-}
-
-
-// sizes
-
-.button--small {
-	font-size:@button-size-small;
-}
-
-.button--large {
-	font-size:@button-size-large;
 }
 
 
@@ -40,7 +21,11 @@
 .button--secondary {}
 
 
-// helpers
+// modifiers
+
+.button--block {
+	display:block;
+}
 
 .button--bold {
 	font-weight:bold;

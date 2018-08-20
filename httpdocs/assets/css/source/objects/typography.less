@@ -14,17 +14,27 @@
 
 // base text styles
 
-	blockquote,
-	dd,
-	dt,
-	figcaption,
-	figure,
-	li,
-	p,
-	pre,
-	address {
-		line-height:1.5em;
+	html {
 		font-family:sans-serif;
+	}
+
+	// the main text-based block elements in
+	// use for any paragraph-style text
+
+	p,
+	li,
+	table,
+	blockquote,
+	pre,
+	address,
+	dd, dt, dl, 
+	caption, details, summary {
+
+		@media(min-width:@mobile-large) {
+		}
+
+		@media(min-width:@tablet-portrait) {
+		}
 	}
 
 
@@ -82,3 +92,10 @@
 			margin-bottom:1em;
 		}
 	}
+
+
+// modifiers
+
+.text-white {
+	color:#fff;
+}

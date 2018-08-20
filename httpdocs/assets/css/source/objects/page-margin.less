@@ -1,0 +1,61 @@
+
+
+.page-margin-top {
+	margin-top:1em;
+
+	@media(min-width:@mobile-large) {
+		margin-top:2.125rem;
+	}
+}
+
+.page-margin-right {
+	margin-right:1em;
+
+	@media(min-width:@mobile-large) {
+		margin-right:2.5rem;
+	}
+}
+
+.page-margin-bottom {
+	margin-bottom:1em;
+
+	@media(min-width:@mobile-large) {
+		margin-bottom:2.125rem;
+	}
+}
+
+.page-margin-left {
+	margin-left:1em;
+
+	@media(min-width:@mobile-large) {
+		margin-left:2.5rem;
+	}
+}
+
+
+// horizontal and vertical helpers
+
+.page-margin-y {
+	&:extend(.page-margin-top);
+	&:extend(.page-margin-bottom);
+}
+
+.page-margin-x {
+	&:extend(.page-margin-right);
+	&:extend(.page-margin-left);
+}
+
+.page-margin {
+	&:extend(.page-margin-y);
+	&:extend(.page-margin-x);
+}
+
+
+// custom media variants (define as needed)
+
+// .page-margin-x\@tablet-portrait {
+// 	@media(min-width:@tablet-portrait) {
+// 		.page-margin-right;
+// 		.page-margin-left;
+// 	}
+

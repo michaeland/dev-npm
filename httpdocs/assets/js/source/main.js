@@ -1,4 +1,3 @@
-// filename: main.js
 
 "use strict"
 
