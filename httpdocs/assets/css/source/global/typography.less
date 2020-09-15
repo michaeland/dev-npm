@@ -1,0 +1,85 @@
+
+
+// reset all headings to basic text styles. 
+// use semantic <h1>, <h2> elements where appropriate based on content flow.
+// use the .heading-1, .heading-2, etc. classes to style headings visually.
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight:normal;
+		font-size:inherit;
+	}
+
+
+// base global text styles
+
+	html {
+		font-family:sans-serif;
+	}
+
+	// the main text-based block elements in
+	// use for any paragraph-style text
+
+	p,
+	li,
+	table,
+	blockquote,
+	pre,
+	address,
+	dd, dt, dl, 
+	caption, details, summary {
+		font-size:1em;
+		@media(min-width:@small) {}
+		@media(min-width:@medium) {}
+	}
+
+
+// custom headings
+
+	.heading-1 {
+		font-size:2em;
+		@media(min-width:@x-small) {}
+		@media(min-width:@small) {}
+		@media(min-width:@medium) {}
+		@media(min-width:@large) {}
+	}
+
+	.heading-2 {
+		font-size:1.5em;
+		@media(min-width:@x-small) {}
+		@media(min-width:@small) {}
+		@media(min-width:@medium) {}
+		@media(min-width:@large) {}
+	}
+
+	.heading-3 {
+		font-size:1.125em;
+		@media(min-width:@x-small) {}
+		@media(min-width:@small) {}
+		@media(min-width:@medium) {}
+		@media(min-width:@large) {}
+	}
+
+
+// user-editable content sections
+// for any CMS-editable body text areas, apply '.text-main' and style the basic
+// elements specifically — this reduces effect of global styles on components
+
+	.text-main {
+
+		// basic heading styles
+		h1, h2, h3, h4, h5, h6 {
+
+		}
+
+		// list styles
+		li {
+			margin-bottom:1em;
+		}
+	}
+
+
+// modifiers
+
+.text-white {
+	color:#fff;
+}

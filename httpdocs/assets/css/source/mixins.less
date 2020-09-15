@@ -1,4 +1,30 @@
 
+.antialias() {
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.clearfix() {
+    *zoom:1; 
+    &:before, 
+    &:after { 
+        content:""; 
+        display:table; 
+    } 
+    &:after { 
+        clear:both;
+    }
+}
+
+
 /* 
     for 
     provides @rules with @i.

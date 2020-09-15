@@ -1,6 +1,6 @@
 
 "use strict"
 
-import moduleName from './modules/moduleName.js';
+import moduleName from './modules/moduleName.js'
 
-moduleName.init();
+moduleName.init()

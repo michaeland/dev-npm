@@ -1,0 +1,15 @@
+
+
+.debug () when (@debug) {
+	.for-breakpoints({
+		body::before {
+			content: %("%a", @breakpoint);
+			background:tomato;
+			padding:0.3em 0.5em;
+			position:fixed;
+			top:0; left:0;
+			z-index:9999999;
+			color:white;
+		}
+	});
+}

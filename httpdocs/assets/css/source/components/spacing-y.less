@@ -1,0 +1,52 @@
+
+// ues for consistent vertical spacing between elements/blocks
+
+	@spacing-y: 2em;
+	@spacing-y--small: 3em;
+	@spacing-y--medium: 4em;
+	@spacing-y--large: 5em;
+
+
+// padding
+
+	.padding-top {
+		padding-top:@spacing-y;
+		@media(min-width:@small) { padding-top:@spacing-y--small; }
+		@media(min-width:@medium) { padding-top:@spacing-y--medium; }
+		@media(min-width:@large) { padding-top:@spacing-y--large; }
+	}
+
+	.padding-bottom {
+		padding-bottom:@spacing-y;
+		@media(min-width:@small) { padding-bottom:@spacing-y--small; }
+		@media(min-width:@medium) { padding-bottom:@spacing-y--medium; }
+		@media(min-width:@large) { padding-bottom:@spacing-y--large; }
+	}
+
+	.padding-y {
+		&:extend(.padding-top);
+		&:extend(.padding-bottom);
+	}
+
+
+// margin
+
+	.margin-top {
+		margin-top:@spacing-y;
+		@media(min-width:@small) { margin-top:@spacing-y--small; }
+		@media(min-width:@medium) { margin-top:@spacing-y--medium; }
+		@media(min-width:@large) { margin-top:@spacing-y--large; }
+	}
+
+	.margin-bottom {
+		margin-bottom:@spacing-y;
+		@media(min-width:@small) { margin-bottom:@spacing-y--small; }
+		@media(min-width:@medium) { margin-bottom:@spacing-y--medium; }
+		@media(min-width:@large) { margin-bottom:@spacing-y--large; }
+	}
+
+	.margin-y {
+		&:extend(.margin-top);
+		&:extend(.margin-bottom);
+	}
+

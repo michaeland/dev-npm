@@ -1,0 +1,22 @@
+
+// sets horizontal page spacing across all breakpoints
+
+.page-width {	
+
+	// center by default
+	margin-left:auto;
+	margin-right:auto;
+
+	// 1em from viewport edge on mobile
+	max-width:90vw;
+
+	@media(min-width:@small) { max-width:80vw }
+	@media(min-width:@medium) {}
+	@media(min-width:@large) {}	
+}
+
+
+.page-width--narrow {
+	&:extend(.page-width);
+	@media(min-width:@medium) { max-width:60vw }
+}

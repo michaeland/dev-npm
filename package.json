@@ -8,8 +8,6 @@
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
-    "browserify-shim": "^3.8.14",
-    "es3ify": "^0.2.2",
     "less": "^2.7.3",
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
@@ -27,15 +25,12 @@
     "js_sourcemap": "httpdocs/assets/js/dist/site.js.map",
     "js_sourcemap_uri": "site.js.map"
   },
-  "browserify-shim": {
-    "jquery": "global:$"
-  },
   "scripts": {
     "build:less": "lessc --source-map --strict-imports --clean-css --autoprefix='> 1%, Firefox > 20, IE > 7, Chrome >= 21, Safari >= 6.0' $npm_package_config_less_input $npm_package_config_less_output",
     "build:less:dev": "lessc --source-map --strict-imports $npm_package_config_less_input $npm_package_config_less_output",
     "watch:less": "yarn build:less:dev && onchange $npm_package_config_less_watch -- yarn build:less:dev",
-    "build:js": "mkdir -p $npm_package_config_js_output_folder && browserify $npm_package_config_js_input --debug --transform [ babelify --sourceMap --presets [ env ] ] --transform [ browserify-shim --global ] --transform [ es3ify --global true ] --plugin [ minifyify --compressPath . --map $npm_package_config_js_sourcemap_uri --output $npm_package_config_js_sourcemap ] --outfile $npm_package_config_js_output --verbose",
-    "watch:js": "mkdir -p $npm_package_config_js_output_folder &&   watchify $npm_package_config_js_input --debug --transform [ babelify --sourceMap --presets [ env ] ] --transform [ browserify-shim --global ] --transform [ es3ify --global true ] --plugin [ minifyify --compressPath . --map $npm_package_config_js_sourcemap_uri --output $npm_package_config_js_sourcemap ] --outfile $npm_package_config_js_output --verbose",
+    "build:js": "mkdir -p $npm_package_config_js_output_folder && browserify $npm_package_config_js_input --debug --transform [ babelify --sourceMap --presets [ env ] ] --plugin [ minifyify --compressPath . --map $npm_package_config_js_sourcemap_uri --output $npm_package_config_js_sourcemap ] --outfile $npm_package_config_js_output --verbose",
+    "watch:js": "mkdir -p $npm_package_config_js_output_folder &&   watchify $npm_package_config_js_input --debug --transform [ babelify --sourceMap --presets [ env ] ] --plugin [ minifyify --compressPath . --map $npm_package_config_js_sourcemap_uri --output $npm_package_config_js_sourcemap ] --outfile $npm_package_config_js_output --verbose",
     "watch": "yarn watch:less & yarn watch:js",
     "build": "yarn build:less & yarn build:js"
   }

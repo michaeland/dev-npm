@@ -1,36 +1,23 @@
 
-// core
-@import "base/base";
-
-
-// vendor
-// @import "./../vendor/____";
-
-
-// config
-@import "config/breakpoints";
-@import "config/font";
-@import "config/grid";
-
-
-// objects
-@import "objects/typography";
-@import "objects/page-max-width";
-@import "objects/page-padding";
-@import "objects/page-margin";
-@import "objects/icon";
-@import "objects/aspect-ratio";
-@import "objects/object-fit";
-
+// global
+@import "global/a";
+@import "global/body";
+@import "global/breakpoints";
+@import "global/debug";
+@import "global/reset";
+@import "global/typography";
 
 // components
-@import "components/a";
+@import "components/grid";
+@import "components/icon";
+@import "components/spacing-y";
+@import "components/page-width";
 @import "components/button";
 
-
-// variables
+// main
+@import "mixins";
+@import "utility";
 @import "variables";
-
 
 // overrides
 @import "overrides";
