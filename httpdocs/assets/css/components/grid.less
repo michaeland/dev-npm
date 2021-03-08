@@ -1,6 +1,6 @@
 
 
-@grid-gutter:1rem;
+@grid-gutter: 1rem;
 @grid-columns: 12;
 
 
@@ -9,7 +9,7 @@
 	flex-wrap:wrap;
 }
 
-[class*=col-] {	width:100% }
+[class*=col-] { width:100% }
 
 .grid--gutter--horizontal {
 	margin-left:-@grid-gutter;
@@ -32,12 +32,12 @@
 // generates .col-x classes
 
 .for(@grid-columns, {
-	.col-@{i} { width: 100% / @grid-columns * @i }
+	.col-@{i} { width: (100% / @grid-columns * @i) }
 });
 
 
 // generates .col-x@breakpoint classes
 
 .for-n-per-breakpoint(@grid-columns, {
-	.col-@{i}\@@{breakpoint} { width: 100% / @grid-columns * @i }
+	.col-@{i}\@@{breakpoint} { width: (100% / @grid-columns * @i) }
 });

@@ -6,17 +6,10 @@
 *[Tt]humbs.db
 *.Trashes
 
-
 # Ignore node modules and errors
 node_modules
 npm-debug.log
 yarn-error.log
 
-
-# Ignore css & js output
-**/assets/css/dist/*
-**/assets/js/dist/*
-
-
-# ignore htaccess
-# httpdocs/.htaccess
+# Ignore webpack output
+**/assets/dist/*

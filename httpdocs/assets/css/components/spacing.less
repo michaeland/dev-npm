@@ -1,0 +1,78 @@
+
+// vertical padding only — scales with the viewport (useful for consistent spacing between modules/components)
+// usage: .{margin|padding}-{top|bottom|y}
+
+	@spacing-y: 2em;
+	@spacing-y--small: 3em;
+	@spacing-y--medium: 4em;
+	@spacing-y--large: 5em;
+
+	.padding-top {
+		padding-top:@spacing-y;
+		@media(min-width:@small) { padding-top:@spacing-y--small; }
+		@media(min-width:@medium) { padding-top:@spacing-y--medium; }
+		@media(min-width:@large) { padding-top:@spacing-y--large; }
+	}
+
+	.padding-bottom {
+		padding-bottom:@spacing-y;
+		@media(min-width:@small) { padding-bottom:@spacing-y--small; }
+		@media(min-width:@medium) { padding-bottom:@spacing-y--medium; }
+		@media(min-width:@large) { padding-bottom:@spacing-y--large; }
+	}
+
+	.padding-y {
+		&:extend(.padding-top);
+		&:extend(.padding-bottom);
+	}
+
+	.margin-top {
+		margin-top:@spacing-y;
+		@media(min-width:@small) { margin-top:@spacing-y--small; }
+		@media(min-width:@medium) { margin-top:@spacing-y--medium; }
+		@media(min-width:@large) { margin-top:@spacing-y--large; }
+	}
+
+	.margin-bottom {
+		margin-bottom:@spacing-y;
+		@media(min-width:@small) { margin-bottom:@spacing-y--small; }
+		@media(min-width:@medium) { margin-bottom:@spacing-y--medium; }
+		@media(min-width:@large) { margin-bottom:@spacing-y--large; }
+	}
+
+	.margin-y {
+		&:extend(.margin-top);
+		&:extend(.margin-bottom);
+	}
+
+
+
+// basic margins with rem multiplier
+// usage .{margin|padding}-{top|right|bottom|left}-{x}
+
+	.margin-top-0 { margin-top:0 !important }
+	.margin-right-0 { margin-right:0 !important }
+	.margin-bottom-0 { margin-bottom:0 !important }
+	.margin-left-0 { margin-left:0 !important }
+
+	.padding-top-0 { padding-top:0 !important }
+	.padding-right-0 { padding-right:0 !important }
+	.padding-bottom-0 { padding-bottom:0 !important }
+	.padding-left-0 { padding-left:0 !important }
+
+	.for(3, {
+		@multiplier: 0.5rem;
+		.margin-top-@{i} { margin-top:@i * @multiplier !important }
+		.margin-right-@{i} { margin-right:@i * @multiplier !important }
+		.margin-bottom-@{i} { margin-bottom:@i * @multiplier !important }
+		.margin-left-@{i} { margin-left:@i * @multiplier !important }
+		.margin-x-@{i} { margin-left:@i * @multiplier !important; margin-right:@i * @multiplier !important }
+		.margin-y-@{i} { margin-top:@i * @multiplier !important; margin-bottom:@i * @multiplier !important }
+
+		.padding-top-@{i} { padding-top:@i * @multiplier !important }
+		.padding-right-@{i} { padding-right:@i * @multiplier !important }
+		.padding-bottom-@{i} { padding-bottom:@i * @multiplier !important }
+		.padding-left-@{i} { padding-left:@i * @multiplier !important }
+		.padding-x-@{i} { padding-left:@i * @multiplier !important; padding-right:@i * @multiplier !important }
+		.padding-y-@{i} { padding-top:@i * @multiplier !important; padding-bottom:@i * @multiplier !important }
+	});
