@@ -47,7 +47,7 @@
 
 
 
-// basic margins with rem multiplier
+// basic margins with em multiplier
 // usage .{margin|padding}-{top|right|bottom|left}-{x}
 
 	.margin-top-0 { margin-top:0 !important }
@@ -61,7 +61,7 @@
 	.padding-left-0 { padding-left:0 !important }
 
 	.for(3, {
-		@multiplier: 0.5rem;
+		@multiplier: 0.5em;
 		.margin-top-@{i} { margin-top:@i * @multiplier !important }
 		.margin-right-@{i} { margin-right:@i * @multiplier !important }
 		.margin-bottom-@{i} { margin-bottom:@i * @multiplier !important }

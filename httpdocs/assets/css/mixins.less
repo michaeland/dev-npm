@@ -32,51 +32,14 @@
 
 .for(@number, @rules) {
     & {
-        .iter(@number);
-        .iter(@i) when (@i > 0) {
-            .iter(@i - 1);
+        .loop(@number);
+        .loop(@i) when (@i > 0) {
+            .loop((@i - 1));
             @rules();
         }
     }   
 }
 
-
-/* 
-    for-each 
-    provides @rules with @key and @value
-*/
-
-.for-each(@list, @rules) {
-    & {
-        .iter(length(@list));
-        .iter(@for-each-i) when (@for-each-i > 0) {
-            .iter(@for-each-i - 1);
-            @key: @for-each-i;
-            @value: extract(@list, @for-each-i); 
-            @rules();
-        }
-    }
-}
-
-
-/* 
-    for-each-associative
-    provides @rules with @item @key and @value.
-    Use with an associative list: key1 value1, key2 value2;
-*/
-
-.for-each-associative(@list, @rules) {
-    & {
-        .iter(length(@list));
-        .iter(@for-each-assoc-i) when (@for-each-assoc-i > 0) {
-            .iter(@for-each-assoc-i - 1);
-            @_item: extract(@list, @for-each-assoc-i); 
-            @key: extract(@_item, 1); 
-            @value: extract(@_item, 2); 
-            @rules();
-        }
-    }
-}
 
 /*
     for-breakpoints
@@ -87,11 +50,10 @@
 
 .for-breakpoints(@rules) {
     & {
-        .iter(length(@breakpoints));
-        .iter(@for-breakpoints-i) when (@for-breakpoints-i > 0) {
-            .iter(@for-breakpoints-i - 1);
-            @_value: extract(@breakpoints, @for-breakpoints-i); 
-            @breakpoint: e(@_value);
+        .loop(length(@breakpoints));
+        .loop(@for-breakpoints-i) when (@for-breakpoints-i > 0) {
+            .loop((@for-breakpoints-i - 1));
+            @breakpoint: e(extract(@breakpoints, @for-breakpoints-i));
             @width: @@breakpoint;
             @media(min-width:@width) {
                 @rules();
@@ -99,6 +61,7 @@
         }
     }
 }
+
 
 /*
     for-n-per-breakpoint
@@ -111,8 +74,6 @@
 
 .for-n-per-breakpoint(@n, @rules) {
     .for-breakpoints({
-        .for(@n, {
-            @rules();
-        });
+        .for(@n, @rules);
     });
 }
